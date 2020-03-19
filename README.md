@@ -1,6 +1,6 @@
 # 😎 Cool Console
 
-Cool Console is an angular library that displays cool messages in console.
+(https://www.npmjs.com/package/ng-cool-console)[Cool Console] is an angular library that displays cool messages in console.
 
 ![Screenshot](https://i.imgur.com/98NHB3T.png)
 
