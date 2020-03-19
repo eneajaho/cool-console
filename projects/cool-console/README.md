@@ -10,16 +10,16 @@ npm install cool-console --save
 ```
 
 ## Setup
-Add CoolConsoleModule to app NgModule
+Add CoolConsoleModule to App NgModule
 
 ```typescript
 import { CommonModule } from '@angular/common';
-import { CoolConsoleModule } from 'cool-console';
+import { CoolConsoleModule } from 'ng-cool-console';
 
 @NgModule({
   imports: [
     CommonModule,
-    CoolConsoleModule.forRoot() // CoolConsoleModule added
+    CoolConsoleModule.forRoot()
   ],
   bootstrap: [App],
   declarations: [App]
@@ -30,7 +30,7 @@ class MainModule {}
 ## Use
 
 ```typescript
-import { CoolConsoleModule } from 'cool-console';
+import { CoolConsoleModule } from 'ng-cool-console';
 
 @Component({...})
 export class YourComponent {
@@ -40,10 +40,11 @@ export class YourComponent {
     this.cc.danger('💀 World is in danger!');
     this.cc.info('🕊 Everything will be okay!');
 
-    /* Custom log
+    /* Custom Log
     *  @param1 args
     *  @param2 color
-    *  @param3 backgroundColor */
+    *  @param3 backgroundColor 
+    */
     this.cc.log('🕊 Everything will be okay!', 'black', 'red');
   }
 }
