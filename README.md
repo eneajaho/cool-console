@@ -78,7 +78,6 @@ imports: [
 
 MIT
 
----
-
-> GitHub [@eneajaho](https://github.com/eneajaho)
+--
+GitHub [@eneajaho](https://github.com/eneajaho)
 
