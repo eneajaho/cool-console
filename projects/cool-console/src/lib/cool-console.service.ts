@@ -1,9 +1,8 @@
 import { Injectable, Inject } from '@angular/core';
-import { CoolConsoleConfigService, CoolConsoleConfig } from './CoolConsoleConfig';
+import { CoolConsoleConfig } from './CoolConsoleConfig';
 import { Colors } from './Colors';
 
 @Injectable({ providedIn: 'root' })
-
 export class CoolConsoleService {
 
   private defaultConfigs: CoolConsoleConfig = {
@@ -14,15 +13,17 @@ export class CoolConsoleService {
 
   private colors: Colors;
 
-  constructor(@Inject(CoolConsoleConfigService) private config) {
+  constructor(@Inject('config') private config?: CoolConsoleConfig) {
     this.checkConfig();
   }
 
   /* Applies the configs from forRoot() */
   private checkConfig() {
-    for (const key in this.config) {
-      if (this.config.hasOwnProperty(key)) {
-        this.defaultConfigs = { ...this.defaultConfigs, [key]: this.config[key] }
+    if (this.config) {
+      for (const key in this.config) {
+        if (this.config.hasOwnProperty(key)) {
+          this.defaultConfigs = { ...this.defaultConfigs, [key]: this.config[key] }
+        }
       }
     }
 

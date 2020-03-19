@@ -16,14 +16,13 @@
       "dom"
     ],
     "paths": {
-      "cool-console": [
-        "dist/cool-console/cool-console",
-        "dist/cool-console"
+      "ng-cool-console": [
+        "dist/ng-cool-console"
       ]
     }
   },
   "angularCompilerOptions": {
-    "enableIvy": false,
+    "enableIvy": true,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }

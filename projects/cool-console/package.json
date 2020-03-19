@@ -1,9 +1,24 @@
 {
-  "name": "cool-console",
-  "version": "0.0.1",
+  "name": "ng-cool-console",
+  "author": "Enea Jahollari",
+  "version": "1.1.0",
+  "description": "Angular library that displays cool messages in console.",
+  "keywords": [
+    "Angular",
+    "Library",
+    "TypeScript",
+    "Service",
+    "Console",
+    "Angular Service"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eneajaho/cool-console"
+  },
   "peerDependencies": {
-    "@angular/common": "^9.0.7",
-    "@angular/core": "^9.0.7",
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.7",
     "tslib": "^1.10.0"
   }
 }
