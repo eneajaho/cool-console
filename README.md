@@ -1,8 +1,6 @@
 # 😎 Cool Console
 
-[Cool Console](https://www.npmjs.com/package/ng-cool-console) is an angular library that displays cool messages in console.
-
-
+Cool Console is an angular library that displays cool messages in console.
 
 ![Screenshot](https://i.imgur.com/98NHB3T.png)
 
@@ -12,16 +10,16 @@ npm install cool-console --save
 ```
 
 ## Setup
-Add CoolConsoleModule to app NgModule
+Add CoolConsoleModule to App NgModule
 
 ```typescript
 import { CommonModule } from '@angular/common';
-import { CoolConsoleModule } from 'cool-console';
+import { CoolConsoleModule } from 'ng-cool-console';
 
 @NgModule({
   imports: [
     CommonModule,
-    CoolConsoleModule.forRoot() // CoolConsoleModule added
+    CoolConsoleModule.forRoot()
   ],
   bootstrap: [App],
   declarations: [App]
@@ -32,7 +30,7 @@ class MainModule {}
 ## Use
 
 ```typescript
-import { CoolConsoleModule } from 'cool-console';
+import { CoolConsoleModule } from 'ng-cool-console';
 
 @Component({...})
 export class YourComponent {
@@ -41,11 +39,13 @@ export class YourComponent {
     this.cc.warning('⚠ Global Warning!');
     this.cc.danger('💀 World is in danger!');
     this.cc.info('🕊 Everything will be okay!');
+    this.cc.info({ name: 'ng-cool-console' });
 
-    /* Custom log
+    /* Custom Log
     *  @param1 args
     *  @param2 color
-    *  @param3 backgroundColor */
+    *  @param3 backgroundColor 
+    */
     this.cc.log('🕊 Everything will be okay!', 'black', 'red');
   }
 }
@@ -60,6 +60,7 @@ Global options include the following options:
 | padding         | string  | '5px 10px'    | Sets the padding for the console string box       | 
 | borderRadius    | string  | '2px'         | Sets the border radius for the console string box |
 | fontSize        | string  | '16px'        | Classes used on toastr service methods            |
+
 
 #### Setting Global Options
 
@@ -80,6 +81,11 @@ imports: [
 
 MIT
 
+
+## Contributors
+[@drdreo](https://github.com/drdreo/)
+
 ---
-GitHub [@eneajaho](https://github.com/eneajaho)
+
+Author: [@eneajaho](https://github.com/eneajaho)
 

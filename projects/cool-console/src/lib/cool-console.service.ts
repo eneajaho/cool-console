@@ -30,28 +30,51 @@ export class CoolConsoleService {
     this.colors = new Colors(this.defaultConfigs);
   }
 
-  success(args) {
+  success(...args) {
     this.log(args, 'green', 'lightgreen');
   }
 
-  warning(args) {
+  warning(...args) {
     this.log(args, '#856404', '#fff3cd')
   }
 
-  danger(args) {
+  danger(...args) {
     this.log(args, '#721c24', '#f8d7da')
   }
 
-  info(args) {
+  info(...args) {
     this.log(args, '#004085', '#cce5ff')
   }
 
-  log(args: string | object, color: string, bgColor: string) {
-    if (typeof args === 'string') {
-      console.log(`%c${args}`, this.colors.init(color, bgColor));
-    } else if (typeof args === 'object') {
-      console.log(`%c${JSON.stringify(args, null, 4)}`, this.colors.init(color, bgColor));
+  log(args: any[], color: string, bgColor: string) {
+
+    if (args.length === 0) {
+      console.log(args);
+      return;
     }
+
+    else if (args.length >= 1) {
+      args.forEach(arg => {
+        if (typeof arg === 'string' || typeof args[0] === 'number' || typeof args[0] === 'boolean') {
+          console.log(`%c${arg}`, this.colors.init(color, bgColor));
+        } else if (typeof arg === 'object') {
+          this.logObj(arg);
+        } else {
+          console.log(arg);
+        }
+      })
+    }
+  }
+
+  private logObj(obj) {
+    Object.keys(obj).forEach(key => {
+      if (typeof obj[key] !== 'object') {
+        console.log(`%c${key} : %c${obj[key]}`, this.colors.init('#b003b0', 'black'), this.colors.init('lightgreen', 'black'));
+      } else {
+        this.logObj(obj[key]);
+      }
+    });
+    console.log('');
   }
 
 }

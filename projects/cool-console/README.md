@@ -39,6 +39,7 @@ export class YourComponent {
     this.cc.warning('⚠ Global Warning!');
     this.cc.danger('💀 World is in danger!');
     this.cc.info('🕊 Everything will be okay!');
+    this.cc.info({ name: 'ng-cool-console' });
 
     /* Custom Log
     *  @param1 args
@@ -60,6 +61,7 @@ Global options include the following options:
 | borderRadius    | string  | '2px'         | Sets the border radius for the console string box |
 | fontSize        | string  | '16px'        | Classes used on toastr service methods            |
 
+
 #### Setting Global Options
 
 Pass values to `CoolConsoleModule.forRoot()`
@@ -79,7 +81,11 @@ imports: [
 
 MIT
 
+
+## Contributors
+[@drdreo](https://github.com/drdreo/)
+
 ---
 
-> GitHub [@eneajaho](https://github.com/eneajaho)
+Author: [@eneajaho](https://github.com/eneajaho)
 
